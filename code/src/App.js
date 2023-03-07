@@ -9,7 +9,6 @@ export const App = () => {
       <hr />
       <div className="albums-container">
         {data.albums.items.map((items) => {
-          // console.log(items)
           return (
             <Album key={items.id} album={items} />
           )

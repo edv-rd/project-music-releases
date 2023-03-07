@@ -18,7 +18,7 @@ export const Album = (props) => {
         </div>
       </a>
       <a href="#" className="album-name">{props.album.name}</a>
-      <Artist artist={props.artists} />
+      <Artist artist={props.album.artists} />
     </div>
   )
 };
