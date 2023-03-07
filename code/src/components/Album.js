@@ -6,7 +6,7 @@ export const Album = (props) => {
   return (
     <>
       <h1>{props.album.name}</h1>
-      <img src={props.album.images[0].url} alt="albumcover" />
+      <img src={props.album.images[0].url} alt="album-cover" />
       <Artist artist={props.artists} />
     </>
   )
