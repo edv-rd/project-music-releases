@@ -1,10 +1,7 @@
 import React from 'react';
 
-export const Artist = (props) => {
+export const Artist = () => {
   return (
-    <>
-      <h1>Artist</h1>
-      <h2>Länk</h2>
-    </>
+    <span>Artist!!</span>
   )
 }

@@ -5,9 +5,140 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #181818;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+hr {
+  border: 1px solid #212121;
+}
+
+h1 {
+  margin: 0px;
+  font-size: 24px;
+}
+
+.main-container {
+  padding: 20px;
+}
+
+.albums-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: max-content;
+  justify-items: center;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.album-cover {
+  filter: brightness(100%);
+  opacity: 1;
+  height: max-content;
+}
+
+.album-cover-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.album-cover:hover .album-cover-image {
+  filter: brightness(30%);
+}
+
+.album-cover:hover .album-controls-icons {
+  filter: brightness(100%);
+}
+
+.album-overlay {
+  display: none;
+}
+
+.album-cover:hover .album-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.album-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.album-controls .icon-heart,
+.album-controls .icon-dots,
+.album-controls .icon-play {
+  width: 32px;
+  height: 32px;
+  filter: invert();
+}
+
+.album-controls .icon-play {
+  width: 72px;
+  height: 72px;
+}
+
+.icon-play:hover {
+  transform: scale(1.2);
+}
+
+.album-name {
+  font-weight: bold;
+  color: white;
+}
+
+.album-name:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+@media only screen and (min-width: 744px) {
+  .albums-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .albums-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
