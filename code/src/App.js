@@ -1,12 +1,15 @@
 import React from 'react';
 import data from './data.json';
-
-console.log(data);
+import { Album } from './components/Album'
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  );
-}
+    <>
+      {data.albums.items.map((items) => {
+        return (
+          <Album key={items.id} album={items} />
+        )
+      })}
+    </>
+  )
+};
