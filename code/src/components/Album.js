@@ -1,5 +1,4 @@
 import React from 'react';
-import { Artist } from './Artist';
 
 export const Album = (props) => {
   console.log(props);
@@ -7,7 +6,6 @@ export const Album = (props) => {
     <>
       <h1>{props.album.name}</h1>
       <img src={props.album.images[0].url} alt="albumcover" />
-      <Artist artist={props.artists} />
     </>
   )
 };

@@ -1,11 +1,9 @@
 import React from 'react';
 
 export const Artist = (props) => {
+  console.log(props);
   return (
-    <>
-    
-      <h1>Artist</h1>
-      <h2>Länk</h2>
-    </>
+    <h1>{props.artist}</h1>
   )
-}
+};
+
