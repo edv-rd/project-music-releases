@@ -1,8 +1,26 @@
 import React from 'react';
 
+// delimiter code from https://stackoverflowteams.com/c/technigo/questions/2239
+const generateDelimiter = (index, length) => {
+  if (index === length - 2) {
+    return ' & ';
+  } else if (index < length - 2) {
+    return ', ';
+  }
+};
+
 export const Artist = (props) => {
-  console.log(props)
   return (
-    <a href={props.artist[0].external_urls.spotify} className="artist-name">{props.artist[0].name}</a>
+    <span style={{ color: '#a0a0a0' }}>
+      {/* looping through array of artist names} */}
+      {props.artist.map((items, index) => {
+        return (
+          <>
+            <a key={items.id} href={items.external_urls.spotify} className="artist-name">{items.name}</a>
+            {generateDelimiter(index, props.artist.length)}
+          </>
+        )
+      })}
+    </span>
   )
-}
+};
