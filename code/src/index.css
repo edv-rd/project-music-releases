@@ -6,13 +6,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #181818;
-  color: white;
+  color: white
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
 
 a:link {
   text-decoration: none;
@@ -107,15 +113,18 @@ h1 {
   width: 32px;
   height: 32px;
   filter: invert();
+  
 }
 
 .album-controls .icon-play {
   width: 72px;
   height: 72px;
+  
 }
 
 .icon-play:hover {
   transform: scale(1.2);
+  
 }
 
 .album-name {
@@ -124,6 +133,11 @@ h1 {
 }
 
 .album-name:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.artist-name:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
