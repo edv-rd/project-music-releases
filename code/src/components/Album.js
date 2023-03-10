@@ -17,7 +17,7 @@ export const Album = (props) => {
           </div>
         </div>
       </a>
-      <a href="#" className="album-name">{props.album.name}</a>
+      <span style={{ color: '#a0a0a0' }}><a href={props.album.external_urls.spotify} className="album-name">{props.album.name}</a> ({props.album.release_date})</span>
       <Artist artist={props.album.artists} />
     </div>
   )

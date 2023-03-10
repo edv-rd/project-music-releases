@@ -14,7 +14,7 @@ export const App = () => {
           )
         })}
       </div>
-      <h1>New singles</h1>
+      <h1>New singles / EPs</h1>
       <hr />
       <div className="albums-container">
         {data.albums.items.filter((item) => item.album_type === 'single').map((items) => {
