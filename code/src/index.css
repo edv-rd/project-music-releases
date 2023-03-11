@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #181818;
-  color: white
+  color: white;
 }
 
 code {
@@ -18,7 +18,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
 
 a:link {
   text-decoration: none;
@@ -45,7 +44,12 @@ h1 {
   font-size: 24px;
 }
 
-.main-container {
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.releases-container {
   padding: 20px;
 }
 
@@ -113,21 +117,22 @@ h1 {
   width: 32px;
   height: 32px;
   filter: invert();
-  
 }
 
 .album-controls .icon-play {
   width: 72px;
   height: 72px;
-  
+  opacity: 0.6;
+  transition: all 0.1s ease-in-out;
 }
 
 .icon-play:hover {
   transform: scale(1.2);
-  
+  opacity: 1;
 }
 
-.album-name {
+.album-name,
+.playlist-name {
   font-weight: bold;
   color: white;
 }
@@ -137,9 +142,57 @@ h1 {
   text-underline-offset: 3px;
 }
 
+.artist-name {
+  color: #a0a0a0;
+}
+
 .artist-name:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.playlists-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.playlists {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.playlist-card {
+  display: flex;
+  padding: 10px;
+  background-color: #212121;
+  margin-top: 20px;
+  align-items: center;
+  justify-items: center;
+  border-radius: 10px;
+}
+
+.playlist-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.playlist-image {
+  object-fit: cover;
+  width: 100%;
+}
+
+.playlist-text {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.playlist-card:hover {
+  background-color: #414141;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 744px) {
@@ -147,11 +200,46 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  .playlist-image {
+    display: flex;
+    object-fit: cover;
+    padding-bottom: 10px;
+  }
+
+  .playlists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
+  .app-container {
+    display: flex;
+    flex-direction: row;
+  }
   .albums-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .playlists-container {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+    background-color: #181818;
+    overflow-x: hidden;
+    padding: 20px;
+  }
+
+  .playlists {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0px;
   }
 }
