@@ -44,7 +44,12 @@ h1 {
   font-size: 24px;
 }
 
-.main-container {
+.app-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.releases-container {
   padding: 20px;
 }
 
@@ -145,10 +150,45 @@ h1 {
   text-underline-offset: 3px;
 }
 
+.playlists-container {
+  display: none;
+}
+
+.playlist-button {
+  display: flex;
+  padding: 10px;
+  background-color: #414141;
+  margin-top: 20px;
+  height: 35px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.playlist-name {
+}
+
+.playlist-button:hover {
+  background-color: #a0a0a0;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 744px) {
   .albums-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .playlists-container {
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    position: sticky;
+    width: 20%;
+    background-color: #181818;
+    overflow-x: hidden;
+    padding: 20px;
   }
 }
 
