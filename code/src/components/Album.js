@@ -2,6 +2,7 @@ import React from 'react';
 import { Artist } from './Artist';
 
 export const Album = (props) => {
+  console.log(props)
   return (
     <div className="album-card">
       <a href={props.album.external_urls.spotify} className="album-link">
