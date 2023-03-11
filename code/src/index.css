@@ -46,7 +46,7 @@ h1 {
 
 .app-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .releases-container {
@@ -131,7 +131,8 @@ h1 {
   opacity: 1;
 }
 
-.album-name {
+.album-name,
+.playlist-name {
   font-weight: bold;
   color: white;
 }
@@ -151,24 +152,46 @@ h1 {
 }
 
 .playlists-container {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
-.playlist-button {
+.playlists {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.playlist-card {
   display: flex;
   padding: 10px;
-  background-color: #414141;
+  background-color: #212121;
   margin-top: 20px;
-  height: 35px;
   align-items: center;
+  justify-items: center;
   border-radius: 10px;
 }
 
-.playlist-name {
+.playlist-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.playlist-button:hover {
-  background-color: #a0a0a0;
+.playlist-image {
+  object-fit: cover;
+  width: 100%;
+}
+
+.playlist-text {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.playlist-card:hover {
+  background-color: #414141;
   cursor: pointer;
 }
 
@@ -178,23 +201,48 @@ h1 {
     grid-template-columns: 1fr 1fr;
   }
 
+  .playlist-image {
+    display: flex;
+    object-fit: cover;
+    padding-bottom: 10px;
+  }
+
+  .playlists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .app-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .albums-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
   .playlists-container {
     display: flex;
+    flex-direction: column;
+    position: sticky;
     top: 0;
     right: 0;
     bottom: 0;
-    height: 100vh;
-    position: sticky;
     width: 20%;
     background-color: #181818;
     overflow-x: hidden;
     padding: 20px;
   }
-}
 
-@media only screen and (min-width: 1280px) {
-  .albums-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .playlist-card {
+  }
+
+  .playlists {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0px;
   }
 }
